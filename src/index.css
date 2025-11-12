@@ -1,0 +1,172 @@
+/* === Tailwind === */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* === Global === */
+html, body {
+  @apply bg-black text-white;
+}
+
+/* === Reusable glass card === */
+.glass {
+  @apply bg-card backdrop-blur-md border border-border rounded-2xl;
+}
+
+/* === Container === */
+.container-xl {
+  @apply max-w-6xl mx-auto px-4 sm:px-6;
+}
+
+/* === Divider === */
+.hr {
+  @apply h-px w-full bg-white/10 my-10;
+}
+
+/* === Shiny corner ribbon === */
+.ribbon::after {
+  content: "";
+  position: absolute;
+  right: 0.35rem;
+  top: 0.35rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, rgba(255,255,255,.35), rgba(255,255,255,0) 60%);
+  transform: rotate(45deg);
+  filter: blur(0.5px);
+}
+
+/* === Button base === */
+.btn {
+  @apply inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/15 bg-white/5 hover:bg-white/10 transition;
+}
+
+/* === Card hover glow === */
+.hover-glow {
+  transition: box-shadow .3s ease, transform .2s ease;
+}
+.hover-glow:hover {
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.1),
+              0 10px 30px rgba(0,0,0,0.3),
+              0 0 40px rgba(255,255,255,0.12);
+  transform: translateY(-2px);
+}
+
+/* === Brand gradient text === */
+.text-brand {
+  background: linear-gradient(90deg, #ec4899, #a855f7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* === Shine sweep on hover (skills) === */
+.shine {
+  position: relative;
+  overflow: hidden;
+}
+.shine::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -30%;
+  width: 40%;
+  height: 200%;
+  transform: rotate(25deg) translateX(-120%);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.5), transparent);
+  transition: transform .6s ease;
+}
+.shine:hover::before {
+  transform: rotate(25deg) translateX(220%);
+}
+
+/* === Hover Glow for Avatar === */
+.glow-hover {
+  transition: box-shadow .35s ease;
+}
+.glow-hover:hover {
+  box-shadow: 0 0 45px rgba(236, 72, 153, 0.45),
+              0 0 65px rgba(168, 85, 247, 0.45);
+}
+
+/* === Smooth typing (Name) === */
+.typing-smooth {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  vertical-align: baseline;
+  border-right: 2px solid currentColor;
+  animation: typingSmooth 2.2s linear forwards, blinkCursor .9s step-end infinite;
+}
+
+/* Adjust width for your name length */
+@keyframes typingSmooth {
+  from { width: 0 }
+  to   { width: 7.4ch }
+}
+
+@keyframes blinkCursor {
+  50% { border-color: transparent }
+}
+
+/* Contact inputs */
+.input {
+  @apply w-full rounded-xl bg-white/5 border border-white/10 text-white/90
+         px-4 py-3 outline-none transition
+         focus:bg-white/10 focus:border-pink-500/40 focus:ring-2 focus:ring-pink-500/25;
+}
+
+
+/* Gradient primary button */
+.btn-gradient {
+  @apply relative inline-flex items-center gap-2 px-5 py-3 rounded-full font-medium;
+  background: linear-gradient(90deg, #ec4899, #a855f7);
+  box-shadow: 0 12px 40px rgba(236, 72, 153, 0.25);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.btn-gradient:hover { transform: translateY(-1px); }
+.btn-gradient:active { transform: translateY(0); }
+
+/* Outline secondary button (teal to feel different from primary) */
+.btn-outline {
+  @apply inline-flex items-center gap-2 px-5 py-3 rounded-full border font-medium;
+  @apply border-teal-400/60 text-teal-200;
+  background: transparent;
+  transition: background .18s ease, transform .18s ease;
+}
+.btn-outline:hover { background: rgba(45, 212, 191, 0.08); transform: translateY(-1px); }
+
+/* Floating action bubbles (socials) */
+.fab {
+  @apply grid place-items-center size-11 rounded-full border border-white/15 text-white/80;
+  background: rgba(255,255,255,0.04);
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+.fab:hover {
+  background: rgba(255,255,255,0.08);
+  box-shadow: 0 10px 30px rgba(168,85,247,.25);
+  transform: translateY(-2px);
+}
+/* ---- Dark theme: override Chrome autofill white fill ---- */
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: #e5e7eb;                 /* text color (tailwind zinc-200) */
+  transition: background-color 9999s ease-in-out 0s; /* prevent blink */
+  box-shadow: 0 0 0px 1000px rgba(255,255,255,0.06) inset !important; /* dark fill */
+  border: 1px solid rgba(255,255,255,0.12) !important;
+  caret-color: #fff;
+}
+
+/* Remove iOS/Safari bevel/inner shadow if any */
+input, textarea, select {
+  -webkit-appearance: none;
+  appearance: none;
+  background-clip: padding-box;
+}
+
+

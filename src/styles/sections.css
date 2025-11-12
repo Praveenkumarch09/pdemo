@@ -1,0 +1,13 @@
+.hero-section, .about-section, .skills-section, .projects-section, .contact-section, .not-found-section {
+  max-width: 780px; width: 98vw; margin: 2rem auto; padding: 1.5rem;
+}
+.hero-content { text-align: center; }
+.skills-list {display:grid;gap:1.0rem;grid-template-columns: repeat(3,minmax(120px,1fr));margin-top:1.5rem}
+.skill-card {padding:1.2em;border-radius:9px;font-size:1.18rem;display:flex;align-items:center;justify-content:center;font-weight:600;cursor:pointer;}
+.projects-list {display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;}
+.project-card {padding:1.1rem;border-radius:11px;cursor:pointer;}
+.not-avail {color:#ff435c;font-weight:bold;font-size:.89rem}
+.project-modal {position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);padding:2.5rem;z-index:999;box-shadow:0 0 80px 0 #1c1c2bd8;}
+.contact-links {display: flex; gap: 1.2rem; margin-top: 1rem;}
+@media (max-width:800px) {.projects-list{grid-template-columns:1fr;}}
+@media (max-width:500px) {.skills-list{grid-template-columns:1fr 1fr;}.projects-list{grid-template-columns:1fr;}}

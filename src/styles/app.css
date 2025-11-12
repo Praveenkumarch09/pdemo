@@ -1,0 +1,32 @@
+body {
+  background: linear-gradient(120deg, #232931 60%, #373940 100%);
+  color: #fff;
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+section, .glass { margin: 2rem auto; }
+.glass, .glassy-navbar {
+  background: rgba(34, 39, 49, 0.84);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.14);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 2rem;
+  transition: box-shadow 0.4s;
+}
+.glass-glow { box-shadow: 0 0 16px 0 #ff435c; transition: box-shadow 0.32s;}
+.btn-glass {
+  background: rgba(34, 39, 49, 0.5);
+  border: none;
+  color: #ff435c;
+  border-radius: 6px;
+  padding: 0.6em 1.2em;
+  margin: 0.4rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-glass:hover { background: #ff435c; color: #fff; }
+@media (max-width: 700px) {
+  .glass, .glassy-navbar {padding: 1rem;}
+}
