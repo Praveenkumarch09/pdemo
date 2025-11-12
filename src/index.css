@@ -169,4 +169,16 @@ input, textarea, select {
   background-clip: padding-box;
 }
 
+@layer utilities {
+  .page-x { @apply px-6 md:px-12; } /* left/right padding for the whole page */
+}
 
+body {
+  @apply bg-black text-white;
+}
+
+@layer utilities {
+  .page-x {
+    @apply px-10 md:px-24;
+  }
+}

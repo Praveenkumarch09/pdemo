@@ -1,9 +1,8 @@
+// Navbar.jsx (hash anchors, no router)
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16);
     window.addEventListener("scroll", onScroll);
@@ -17,21 +16,16 @@ export default function Navbar() {
   );
 
   return (
-    <header
-      className={`sticky top-0 z-50 transition-all ${
-        scrolled ? "bg-black/70 backdrop-blur-md border-b border-white/10" : ""
-      }`}
-    >
-      <div className="container-xl flex items-center justify-between h-14">
-        <Link to="/" className="font-semibold tracking-wide text-white text-lg">
+<header className={`sticky top-0 z-50 ${scrolled ? "bg-black/70 backdrop-blur-md border-b border-white/10" : ""}`}>
+  <div className="px-10 md:px-24 flex items-center justify-between h-14">
+        <a href="#home" className="font-semibold tracking-wide text-white text-lg">
           <span className="text-brand">P</span>raveen
-        </Link>
-
+        </a>
         <nav className="text-sm hidden sm:flex items-center gap-2">
           <Item href="#home">Home</Item>
           <Item href="#about">About</Item>
           <Item href="#skills">Skills</Item>
-          <Item href="#projects">Project</Item>
+          <Item href="#projects">Projects</Item>
           <Item href="#contact">Contact</Item>
         </nav>
       </div>
