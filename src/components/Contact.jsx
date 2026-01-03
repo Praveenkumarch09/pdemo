@@ -66,14 +66,14 @@ export default function Contact() {
         >
           <div>
             <label className="block text-sm mb-2 opacity-80">Your Name</label>
-            <input name="name" placeholder="John Doe" className="input" />
+            <input name="name" placeholder="Enter Your Name" className="input" />
           </div>
 
           <div>
             <label className="block text-sm mb-2 opacity-80">Your Email</label>
             <input
               name="email"
-              placeholder="john@example.com"
+              placeholder="abc@example.com"
               type="email"
               className="input"
             />
